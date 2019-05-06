@@ -11,7 +11,7 @@ class App extends Component {
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand">React Express App</a>
+            <a className="navbar-brand">React Axios</a>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item"><Link to={'/create'} className="nav-link">Create</Link></li>
