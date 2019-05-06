@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Create from './components/Create';
+import Index from './components/Index';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="container">
+          <h2>React Axios</h2>
+          <ul>
+            <li><Link to={'/create'}>Create</Link></li>
+            <li><Link to={'/index'}>List</Link></li>
+          </ul>
+          <hr />
+          <Switch>
+              <Route exact path='/create' component={ Create } />
+              <Route path='/index' component={ Index } />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
